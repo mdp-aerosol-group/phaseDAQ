@@ -2,6 +2,13 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
+  <object class="GtkAdjustment" id="Bins">
+    <property name="lower">2</property>
+    <property name="upper">2200</property>
+    <property name="value">2200</property>
+    <property name="step-increment">100</property>
+    <property name="page-increment">10</property>
+  </object>
   <object class="GtkAdjustment" id="DMATemperatureAdjust">
     <property name="lower">-20</property>
     <property name="upper">40</property>
@@ -14,21 +21,39 @@
     <property name="step-increment">10</property>
     <property name="page-increment">10</property>
   </object>
+  <object class="GtkAdjustment" id="LogMax">
+    <property name="lower">1</property>
+    <property name="upper">5</property>
+    <property name="value">4</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="LogMin">
+    <property name="lower">1</property>
+    <property name="upper">4.7999999999999998</property>
+    <property name="value">2</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="Proportional Bandwidth">
+    <property name="upper">10</property>
+    <property name="value">5</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">10</property>
+  </object>
   <object class="GtkAdjustment" id="SheathAdjust">
     <property name="lower">2</property>
     <property name="upper">10</property>
     <property name="step-increment">0.10</property>
     <property name="page-increment">10</property>
   </object>
+  <object class="GtkTextBuffer" id="UDPmsgBuffer"/>
+  <object class="GtkTextBuffer" id="UDPtextBuffer"/>
   <object class="GtkAdjustment" id="adjustment1">
     <property name="lower">5</property>
     <property name="upper">200</property>
+    <property name="value">60</property>
     <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="adjustment2">
-    <property name="upper">10</property>
-    <property name="step-increment">0.10</property>
     <property name="page-increment">10</property>
   </object>
   <object class="GtkAdjustment" id="adjustment3">
@@ -41,20 +66,12 @@
     <property name="step-increment">0.01</property>
     <property name="page-increment">10</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment5">
-    <property name="lower">2</property>
-    <property name="upper">2056</property>
-    <property name="step-increment">64</property>
-    <property name="page-increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="adjustment6">
-    <property name="upper">10</property>
-    <property name="step-increment">0.01</property>
-    <property name="page-increment">10</property>
-  </object>
+  <object class="GtkEntryBuffer" id="entrybuffer1"/>
+  <object class="GtkEntryBuffer" id="entrybuffer2"/>
   <object class="GtkAdjustment" id="setting_temp1">
     <property name="lower">-60</property>
     <property name="upper">100</property>
+    <property name="value">4.7999999999999998</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
@@ -67,12 +84,14 @@
   <object class="GtkAdjustment" id="startT_1">
     <property name="lower">-40</property>
     <property name="upper">90</property>
+    <property name="value">20</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
   <object class="GtkAdjustment" id="stopT_1">
     <property name="lower">-40</property>
     <property name="upper">100</property>
+    <property name="value">80</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
@@ -221,7 +240,7 @@
                     <property name="text" translatable="yes">60</property>
                     <property name="adjustment">startT_1</property>
                     <property name="climb-rate">1</property>
-                    <property name="value">60</property>
+                    <property name="value">20</property>
                   </object>
                   <packing>
                     <property name="x">595</property>
@@ -237,7 +256,7 @@
                     <property name="text" translatable="yes">100</property>
                     <property name="adjustment">stopT_1</property>
                     <property name="climb-rate">1</property>
-                    <property name="value">100</property>
+                    <property name="value">80</property>
                   </object>
                   <packing>
                     <property name="x">715</property>
@@ -740,7 +759,7 @@
                     <property name="text" translatable="yes">40</property>
                     <property name="adjustment">adjustment1</property>
                     <property name="climb-rate">1</property>
-                    <property name="value">40</property>
+                    <property name="value">60</property>
                   </object>
                   <packing>
                     <property name="x">835</property>
@@ -801,7 +820,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry">
+                  <object class="GtkEntry" id="POPSq">
                     <property name="width-request">180</property>
                     <property name="height-request">0</property>
                     <property name="visible">True</property>
@@ -816,15 +835,15 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="proportional1">
+                  <object class="GtkSpinButton" id="logmax">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">5.0</property>
-                    <property name="adjustment">adjustment2</property>
+                    <property name="adjustment">LogMax</property>
                     <property name="climb-rate">1</property>
-                    <property name="digits">1</property>
-                    <property name="value">5</property>
+                    <property name="digits">2</property>
+                    <property name="value">4</property>
                   </object>
                   <packing>
                     <property name="x">250</property>
@@ -879,14 +898,15 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="derivative1">
+                  <object class="GtkSpinButton" id="logmin">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">0.00</property>
-                    <property name="adjustment">adjustment6</property>
+                    <property name="adjustment">LogMin</property>
                     <property name="climb-rate">1</property>
                     <property name="digits">2</property>
+                    <property name="value">2</property>
                   </object>
                   <packing>
                     <property name="x">250</property>
@@ -894,9 +914,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox">
-                    <property name="width-request">400</property>
-                    <property name="height-request">250</property>
+                  <object class="GtkBox" id="POPSFlow">
+                    <property name="width-request">690</property>
+                    <property name="height-request">150</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="orientation">vertical</property>
@@ -905,8 +925,8 @@
                     </child>
                   </object>
                   <packing>
-                    <property name="x">30</property>
-                    <property name="y">440</property>
+                    <property name="x">485</property>
+                    <property name="y">480</property>
                   </packing>
                 </child>
                 <child>
@@ -932,7 +952,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry">
+                  <object class="GtkEntry" id="POPSc">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
@@ -946,7 +966,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry">
+                  <object class="GtkEntry" id="POPScount">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
@@ -960,14 +980,14 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton">
+                  <object class="GtkSpinButton" id="nbins">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">0</property>
-                    <property name="adjustment">adjustment5</property>
+                    <property name="adjustment">Bins</property>
                     <property name="climb-rate">1</property>
-                    <property name="value">256</property>
+                    <property name="value">2200</property>
                   </object>
                   <packing>
                     <property name="x">250</property>
@@ -975,23 +995,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">POPS Flow</property>
-                    <attributes>
-                      <attribute name="weight" value="bold"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="x">30</property>
-                    <property name="y">400</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkBox">
-                    <property name="width-request">400</property>
-                    <property name="height-request">250</property>
+                  <object class="GtkBox" id="CountData">
+                    <property name="width-request">690</property>
+                    <property name="height-request">150</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="orientation">vertical</property>
@@ -1001,28 +1007,14 @@
                   </object>
                   <packing>
                     <property name="x">485</property>
-                    <property name="y">440</property>
+                    <property name="y">630</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Count Data</property>
-                    <attributes>
-                      <attribute name="weight" value="bold"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="x">485</property>
-                    <property name="y">400</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Histogram</property>
+                    <property name="label" translatable="yes">POPS Data</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
@@ -1033,9 +1025,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox">
-                    <property name="width-request">640</property>
-                    <property name="height-request">320</property>
+                  <object class="GtkBox" id="Histogram">
+                    <property name="width-request">690</property>
+                    <property name="height-request">287</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="orientation">vertical</property>
@@ -1049,44 +1041,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkBox" id="POPSConcentration">
+                    <property name="width-request">690</property>
+                    <property name="height-request">150</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">POPS Peak Data File</property>
-                    <attributes>
-                      <attribute name="weight" value="bold"/>
-                    </attributes>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <placeholder/>
+                    </child>
                   </object>
                   <packing>
-                    <property name="x">940</property>
-                    <property name="y">400</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkEntry">
-                    <property name="width-request">185</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="vexpand">True</property>
-                    <property name="editable">False</property>
-                  </object>
-                  <packing>
-                    <property name="x">940</property>
-                    <property name="y">440</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton">
-                    <property name="label" translatable="yes">New File</property>
-                    <property name="height-request">48</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
-                  </object>
-                  <packing>
-                    <property name="x">940</property>
-                    <property name="y">480</property>
+                    <property name="x">485</property>
+                    <property name="y">330</property>
                   </packing>
                 </child>
               </object>
@@ -1128,7 +1095,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="TESerialPort3">
+                  <object class="GtkEntry" id="TESerialPort1">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
@@ -1143,12 +1110,12 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="proportional2">
+                  <object class="GtkSpinButton" id="proportional">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="text" translatable="yes">5.0</property>
-                    <property name="adjustment">adjustment2</property>
+                    <property name="adjustment">Proportional Bandwidth</property>
                     <property name="climb-rate">1</property>
                     <property name="digits">1</property>
                     <property name="value">5</property>
@@ -1207,7 +1174,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="integral2">
+                  <object class="GtkSpinButton" id="integral">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
@@ -1223,7 +1190,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSpinButton" id="derivative2">
+                  <object class="GtkSpinButton" id="derivative">
                     <property name="width-request">180</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
@@ -1238,24 +1205,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton">
-                    <property name="label" translatable="yes">Reboot
- sbRIO</property>
+                  <object class="GtkButton" id="reboot">
+                    <property name="label" translatable="yes">Reboot sbRIO</property>
                     <property name="width-request">180</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
-                  </object>
-                  <packing>
-                    <property name="x">250</property>
-                    <property name="y">390</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton">
-                    <property name="label" translatable="yes">Set Time</property>
-                    <property name="width-request">180</property>
-                    <property name="height-request">48</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
@@ -1266,7 +1218,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="Timer2">
+                  <object class="GtkEntry" id="Timer">
                     <property name="width-request">400</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
@@ -1316,21 +1268,6 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry">
-                    <property name="width-request">400</property>
-                    <property name="height-request">180</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="vexpand">True</property>
-                    <property name="editable">False</property>
-                  </object>
-                  <packing>
-                    <property name="x">30</property>
-                    <property name="y">500</property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
@@ -1345,18 +1282,47 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry">
+                  <object class="GtkTextView" id="UDPdata">
                     <property name="width-request">640</property>
-                    <property name="height-request">310</property>
+                    <property name="height-request">640</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
-                    <property name="hexpand">True</property>
-                    <property name="vexpand">True</property>
+                    <property name="vscroll-policy">natural</property>
                     <property name="editable">False</property>
+                    <property name="wrap-mode">char</property>
+                    <property name="buffer">UDPtextBuffer</property>
+                    <property name="monospace">True</property>
                   </object>
                   <packing>
                     <property name="x">485</property>
                     <property name="y">44</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTextView" id="UDPmsg">
+                    <property name="width-request">400</property>
+                    <property name="height-request">180</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="wrap-mode">char</property>
+                    <property name="buffer">UDPmsgBuffer</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">500</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="newfile">
+                    <property name="label" translatable="yes">Start New File</property>
+                    <property name="width-request">180</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">390</property>
                   </packing>
                 </child>
               </object>
@@ -1386,9 +1352,6 @@
             <property name="can-focus">False</property>
             <property name="stack">Main Stack</property>
           </object>
-        </child>
-        <child>
-          <placeholder/>
         </child>
         <child>
           <object class="GtkButton" id="closeButton">

@@ -1,23 +1,48 @@
 function sampleHz_data_file()
-    ts = now()     
+    ts = now()
 
-    sampleHz_df = DataFrame(
-        Timestamp = ts,
-        Unixtime = datetime2unix(ts),
-        Int64time = Dates.value(ts),
-        LapseTime = @sprintf("%.3f", main_elapsed_time.value),
-        state = stateTE1.value,
-        T1 = parse_box("TE1ReadT1", missing),
-        T2 = parse_box("TE1ReadT2", missing),
-        TSet = TE1setT.value,
-        RH = parse_box("readRH", missing),
-        T = parse_box("readT", missing),
-        Vset = V.value,
-        Vread = parse_box("readV", missing),
-        Iread = parse_box("readI", missing),
-    )
+    state = stateTE1.value
+    T1 = parse_box("TE1ReadT1", -990)
+    T2 = parse_box("TE1ReadT2", -999)
+    TSet = TE1setT.value
+    RH = parse_box("readRH", -999)
+    T = parse_box("readT", -999)
+    Vset = V.value
+    Vread = parse_box("readV", -999)
+    Iread = parse_box("readI", -999)
+    str1 =
+        [
+            Dates.format(ts, "yyyy-mm-ddTHH:MM:SS,"),
+            @sprintf(
+                "%i,%.3f,%s,%.3f,%.3f,%3.f,%.3f,%.3f,%.3f,%.3f,",
+                datetime2unix(ts),
+                main_elapsed_time.value,
+                state,
+                T1,
+                T2,
+                TSet,
+                RH,
+                Vset,
+                Vread,
+                Iread
+            )
+        ] |> join
 
-    sampleHz_df |> CSV.write(path * "/" * outfile, append = true)
+
+    p = POPS.UDPdataPacket.value
+    str2 = try
+        msg = deepcopy(p[53:end])
+        data = ntoh.(reinterpret(Float32, msg))
+        strs = map(x -> @sprintf(",%.2f", x), data)
+        join(hcat(String(p[1:51]), strs...))
+    catch
+        "missing"
+    end
+
+    str = join([str1, str2, "\n"])
+    open(path.value * "/" * outfile.value, "a") do f
+        write(f, str)
+    end
 end
 
 function sampleHz_generic_loop()
@@ -88,13 +113,13 @@ function sampleHz_generic_loop()
     set_gtk_property!(gui["TE1PowerOutput"], :text, parse_missing1(Power))
     addpoint!(t, TE1setT.value, plotTemp, gplotTemp, 1, true)
     (typeof(TE1_T1) == Missing) || addpoint!(t, TE1_T1, plotTemp, gplotTemp, 2, true)
-    #(typeof(TE1_T2) == Missing) || addpoint!(t,TE1_T2,plotTemp,gplotTemp,3,true)
-    
-    AIN, Tk, rawcount, count = labjack_signals.value 
+    (typeof(TE1_T2) == Missing) || addpoint!(t, TE1_T2, plotTemp, gplotTemp, 3, true)
+
+    AIN, Tk, rawcount, count = labjack_signals.value
     readV = AIN[1] |> (x -> (x * 1000.0))
     readI = AIN[2] |> (x -> -x * 0.167 * 1000.0)
     RH, T = AIN2HC(AIN, 3, 4)
-    
+
     set_gtk_property!(gui["readV"], :text, @sprintf("%.1f", readV))
     set_gtk_property!(gui["readI"], :text, @sprintf("%.1f", readI))
     set_gtk_property!(gui["readRH"], :text, @sprintf("%.1f", RH))

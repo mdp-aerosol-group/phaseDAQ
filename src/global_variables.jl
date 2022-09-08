@@ -6,13 +6,23 @@ const mgrey = RGBA(0.4, 0.4, 0.4, 1)
 const lpm = 1.666666e-5
 const bufferlength = 400
 
-const path, outfile = let
+const path = Signal("")
+const outfile = Signal("")
+
+function newfile()
     a = pwd() |> x -> split(x, "/")
     datestr = Dates.format(now(), "yyyymmdd")
-    path = mapreduce(a -> "/" * a, *, a[2:3]) * "/Data/PhasePOPS/" * datestr
+    datetimestr = Dates.format(now(), "yyyymmdd_HHMMSS")
+    thepath = mapreduce(a -> "/" * a, *, a[2:3]) * "/Data/PhasePOPS/" * datestr
     read(`mkdir -p $path`)
-    path, "PhasePOPS_" * datestr * ".csv"
+    push!(path, thepath)
+    push!(outfile, "PhasePOPS_" * datetimestr * ".csv")
+    sleep(0.4)
+    x = path.value*"/"*outfile.value
+    read(`touch $x`)
 end
+
+newfile()
 
 const rampTE1 = Reactive.Signal(false)
 const stateTE1 = Reactive.Signal(:Manual)
@@ -36,6 +46,15 @@ function parse_box(s::String, default::Missing)
         parse(Float64, x)
     catch
         y = missing
+    end
+end
+
+function parse_box(s::String, default)
+    x = get_gtk_property(gui[s], :text, String)
+    y = try
+        parse(Float64, x)
+    catch
+        y = default
     end
 end
 
