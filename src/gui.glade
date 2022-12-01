@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.40.0 -->
+<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkAdjustment" id="Bins">
     <property name="lower">2</property>
     <property name="upper">2200</property>
     <property name="value">2200</property>
-    <property name="step-increment">100</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">100</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="DMATemperatureAdjust">
     <property name="lower">-20</property>
     <property name="upper">40</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="DiameterAdjust">
     <property name="lower">100</property>
     <property name="upper">800</property>
-    <property name="step-increment">10</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">10</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="LogMax">
     <property name="lower">1</property>
     <property name="upper">5</property>
     <property name="value">4</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="LogMin">
     <property name="lower">1</property>
     <property name="upper">4.7999999999999998</property>
     <property name="value">2</property>
-    <property name="step-increment">0.01</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">0.01</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="Proportional Bandwidth">
     <property name="upper">10</property>
     <property name="value">5</property>
-    <property name="step-increment">0.10</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">0.10000000000000001</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="SheathAdjust">
     <property name="lower">2</property>
     <property name="upper">10</property>
-    <property name="step-increment">0.10</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">0.10000000000000001</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkTextBuffer" id="UDPmsgBuffer"/>
   <object class="GtkTextBuffer" id="UDPtextBuffer"/>
@@ -53,18 +53,32 @@
     <property name="lower">5</property>
     <property name="upper">200</property>
     <property name="value">60</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="lower">1</property>
+    <property name="upper">10</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="adjustment3">
     <property name="upper">1</property>
-    <property name="step-increment">0.02</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">0.02</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="adjustment4">
     <property name="upper">1</property>
-    <property name="step-increment">0.01</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">0.01</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment5">
+    <property name="lower">1</property>
+    <property name="upper">10</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkEntryBuffer" id="entrybuffer1"/>
   <object class="GtkEntryBuffer" id="entrybuffer2"/>
@@ -72,60 +86,87 @@
     <property name="lower">-60</property>
     <property name="upper">100</property>
     <property name="value">4.7999999999999998</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="setting_temp2">
     <property name="lower">-60</property>
     <property name="upper">100</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="startT_1">
     <property name="lower">-40</property>
     <property name="upper">90</property>
     <property name="value">20</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="stopT_1">
     <property name="lower">-40</property>
     <property name="upper">100</property>
     <property name="value">80</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkWindow" id="mainWindow">
-    <property name="width-request">1195</property>
-    <property name="height-request">830</property>
-    <property name="can-focus">False</property>
+    <property name="width_request">1195</property>
+    <property name="height_request">830</property>
+    <property name="can_focus">False</property>
     <property name="resizable">False</property>
-    <property name="window-position">center</property>
-    <property name="default-width">-1</property>
-    <property name="default-height">-1</property>
+    <property name="window_position">center</property>
+    <property name="default_width">-1</property>
+    <property name="default_height">-1</property>
     <property name="gravity">center</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="title" translatable="yes">Phase Detection System</property>
+        <property name="has_subtitle">False</property>
+        <child>
+          <object class="GtkStackSwitcher">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="stack">Main Stack</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="closeButton">
+            <property name="label" translatable="yes">stopDAQ</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
     <child>
       <object class="GtkPaned">
         <property name="visible">True</property>
-        <property name="can-focus">True</property>
+        <property name="can_focus">True</property>
         <property name="position">2</property>
-        <property name="position-set">True</property>
+        <property name="position_set">True</property>
         <child>
           <placeholder/>
         </child>
         <child>
           <object class="GtkStack" id="Main Stack">
             <property name="visible">True</property>
-            <property name="can-focus">False</property>
+            <property name="can_focus">False</property>
             <child>
               <object class="GtkFixed" id="Temperature ramp">
-                <property name="width-request">32</property>
+                <property name="width_request">32</property>
                 <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Input/Output</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -139,7 +180,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Set Temperature (°C)</property>
                   </object>
                   <packing>
@@ -150,7 +191,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Read Temperature 1 (°C)</property>
                   </object>
                   <packing>
@@ -161,7 +202,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Read Temperature 2 (°C)</property>
                   </object>
                   <packing>
@@ -171,10 +212,10 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="TE1ReadT2">
-                    <property name="width-request">180</property>
-                    <property name="height-request">0</property>
+                    <property name="width_request">180</property>
+                    <property name="height_request">0</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -186,9 +227,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="TE1ReadT1">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -201,7 +242,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Manual/Ramp</property>
                   </object>
                   <packing>
@@ -212,7 +253,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Stop</property>
                   </object>
                   <packing>
@@ -223,7 +264,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Duration (min)</property>
                   </object>
                   <packing>
@@ -233,13 +274,13 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="startT1">
-                    <property name="width-request">110</property>
-                    <property name="height-request">14</property>
+                    <property name="width_request">110</property>
+                    <property name="height_request">14</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">60</property>
                     <property name="adjustment">startT_1</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="value">20</property>
                   </object>
                   <packing>
@@ -249,13 +290,13 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="stopT1">
-                    <property name="width-request">110</property>
-                    <property name="height-request">14</property>
+                    <property name="width_request">110</property>
+                    <property name="height_request">14</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">100</property>
                     <property name="adjustment">stopT_1</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="value">80</property>
                   </object>
                   <packing>
@@ -265,14 +306,14 @@
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="TE1Mode">
-                    <property name="width-request">100</property>
-                    <property name="height-request">14</property>
+                    <property name="width_request">100</property>
+                    <property name="height_request">14</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="hexpand">False</property>
                     <property name="vexpand">False</property>
                     <property name="active">0</property>
-                    <property name="active-id">Manual</property>
+                    <property name="active_id">Manual</property>
                     <items>
                       <item id="Manual" translatable="yes">Manual</item>
                       <item id="Ramp" translatable="yes">Ramp</item>
@@ -286,7 +327,7 @@
                 <child>
                   <object class="GtkEntry" id="TERampCounter1">
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -300,7 +341,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Ramp Timer</property>
                   </object>
                   <packing>
@@ -310,13 +351,13 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="set_temp1">
-                    <property name="width-request">180</property>
-                    <property name="height-request">0</property>
+                    <property name="width_request">180</property>
+                    <property name="height_request">0</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">20</property>
                     <property name="adjustment">setting_temp1</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="value">20</property>
                   </object>
                   <packing>
@@ -327,7 +368,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Start</property>
                   </object>
                   <packing>
@@ -337,9 +378,9 @@
                 </child>
                 <child>
                   <object class="GtkLabel">
-                    <property name="width-request">100</property>
+                    <property name="width_request">100</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Controller Settings</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -353,7 +394,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Power On/Off</property>
                   </object>
                   <packing>
@@ -364,7 +405,7 @@
                 <child>
                   <object class="GtkSwitch" id="power">
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                   </object>
                   <packing>
                     <property name="x">250</property>
@@ -374,13 +415,13 @@
                 <child>
                   <object class="GtkComboBoxText" id="thermistor">
                     <property name="name">sensor</property>
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="hexpand">False</property>
                     <property name="vexpand">False</property>
                     <property name="active">1</property>
-                    <property name="active-id">TS67 OR TS136 15K</property>
+                    <property name="active_id">TS67 OR TS136 15K</property>
                     <items>
                       <item id="0" translatable="yes">TS141 5K</item>
                       <item id="1" translatable="yes">TS67 15K</item>
@@ -398,7 +439,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Thermistor Type</property>
                   </object>
                   <packing>
@@ -408,9 +449,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="TE1PowerOutput">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -423,7 +464,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Power Ouput</property>
                   </object>
                   <packing>
@@ -434,7 +475,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Control Output Polarity</property>
                   </object>
                   <packing>
@@ -445,13 +486,13 @@
                 <child>
                   <object class="GtkComboBoxText" id="polarity">
                     <property name="name">sensor</property>
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="hexpand">False</property>
                     <property name="vexpand">False</property>
                     <property name="active">0</property>
-                    <property name="active-id">TS67 OR TS136 15K</property>
+                    <property name="active_id">TS67 OR TS136 15K</property>
                     <items>
                       <item id="0" translatable="yes">HEAT WP1+</item>
                       <item id="1" translatable="yes">HEAT WP2+ </item>
@@ -465,7 +506,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">DMA Control</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -479,7 +520,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Mobility Diameter</property>
                   </object>
                   <packing>
@@ -489,12 +530,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="Diameter">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">300</property>
                     <property name="adjustment">DiameterAdjust</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="value">300</property>
                   </object>
                   <packing>
@@ -505,7 +546,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Sheath Flow (L/min-1)</property>
                   </object>
                   <packing>
@@ -515,12 +556,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="SheathFlow">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">5.0</property>
                     <property name="adjustment">SheathAdjust</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">1</property>
                     <property name="value">5</property>
                   </object>
@@ -531,15 +572,15 @@
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="DMAGas">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="halign">start</property>
                     <property name="valign">start</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="active">0</property>
-                    <property name="active-id">Air</property>
+                    <property name="active_id">Air</property>
                     <items>
                       <item id="Air" translatable="yes">Air</item>
                       <item id="N2" translatable="yes">N2</item>
@@ -553,7 +594,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">DMA Geometry</property>
                   </object>
                   <packing>
@@ -563,9 +604,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="setV">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -578,7 +619,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Set Voltage (V)</property>
                   </object>
                   <packing>
@@ -589,7 +630,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Read Voltage (V)</property>
                   </object>
                   <packing>
@@ -600,7 +641,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Read Current (µA)</property>
                   </object>
                   <packing>
@@ -610,9 +651,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="readV">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -624,9 +665,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="readI">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -639,7 +680,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">DMA Temperature (°C)</property>
                   </object>
                   <packing>
@@ -649,12 +690,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="DMATemperature">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">23.0</property>
                     <property name="adjustment">DMATemperatureAdjust</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">1</property>
                     <property name="value">23</property>
                   </object>
@@ -666,7 +707,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Carrier Gas</property>
                   </object>
                   <packing>
@@ -676,15 +717,15 @@
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="DMAType">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="halign">start</property>
                     <property name="valign">start</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="active">1</property>
-                    <property name="active-id">TSI</property>
+                    <property name="active_id">TSI</property>
                     <items>
                       <item id="HFDMA" translatable="yes">HighFlow</item>
                       <item id="TSI" translatable="yes">TSI</item>
@@ -703,7 +744,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Temperature (°C)</property>
                   </object>
                   <packing>
@@ -714,7 +755,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Sample RH (%)</property>
                   </object>
                   <packing>
@@ -724,9 +765,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="readT">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -738,9 +779,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="readRH">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -752,13 +793,13 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="duration1">
-                    <property name="width-request">110</property>
-                    <property name="height-request">14</property>
+                    <property name="width_request">110</property>
+                    <property name="height_request">14</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">40</property>
                     <property name="adjustment">adjustment1</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="value">60</property>
                   </object>
                   <packing>
@@ -768,10 +809,10 @@
                 </child>
                 <child>
                   <object class="GtkBox" id="TempGraph1">
-                    <property name="width-request">640</property>
-                    <property name="height-request">500</property>
+                    <property name="width_request">640</property>
+                    <property name="height_request">500</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <placeholder/>
@@ -790,14 +831,14 @@
             </child>
             <child>
               <object class="GtkFixed" id="Temperature ramp1">
-                <property name="width-request">32</property>
-                <property name="height-request">32</property>
+                <property name="width_request">32</property>
+                <property name="height_request">32</property>
                 <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">POPS </property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -811,7 +852,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Flow</property>
                   </object>
                   <packing>
@@ -821,10 +862,10 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="POPSq">
-                    <property name="width-request">180</property>
-                    <property name="height-request">0</property>
+                    <property name="width_request">180</property>
+                    <property name="height_request">0</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -836,12 +877,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="logmax">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">5.0</property>
                     <property name="adjustment">LogMax</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">2</property>
                     <property name="value">4</property>
                   </object>
@@ -853,7 +894,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Histogram</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -867,7 +908,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Bins</property>
                   </object>
                   <packing>
@@ -878,7 +919,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Minimum Value</property>
                   </object>
                   <packing>
@@ -889,7 +930,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Maximum Value</property>
                   </object>
                   <packing>
@@ -899,12 +940,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="logmin">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">0.00</property>
                     <property name="adjustment">LogMin</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">2</property>
                     <property name="value">2</property>
                   </object>
@@ -915,10 +956,10 @@
                 </child>
                 <child>
                   <object class="GtkBox" id="POPSFlow">
-                    <property name="width-request">690</property>
-                    <property name="height-request">150</property>
+                    <property name="width_request">690</property>
+                    <property name="height_request">150</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <placeholder/>
@@ -932,7 +973,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Particle Concentration (#/cc)</property>
                   </object>
                   <packing>
@@ -943,7 +984,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Particle Rate (#/s)</property>
                   </object>
                   <packing>
@@ -953,9 +994,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="POPSc">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -967,9 +1008,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="POPScount">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -981,12 +1022,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="nbins">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">0</property>
                     <property name="adjustment">Bins</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="value">2200</property>
                   </object>
                   <packing>
@@ -996,10 +1037,10 @@
                 </child>
                 <child>
                   <object class="GtkBox" id="CountData">
-                    <property name="width-request">690</property>
-                    <property name="height-request">150</property>
+                    <property name="width_request">690</property>
+                    <property name="height_request">150</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <placeholder/>
@@ -1013,7 +1054,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">POPS Data</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -1026,10 +1067,10 @@
                 </child>
                 <child>
                   <object class="GtkBox" id="Histogram">
-                    <property name="width-request">690</property>
-                    <property name="height-request">287</property>
+                    <property name="width_request">690</property>
+                    <property name="height_request">287</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <placeholder/>
@@ -1042,10 +1083,10 @@
                 </child>
                 <child>
                   <object class="GtkBox" id="POPSConcentration">
-                    <property name="width-request">690</property>
-                    <property name="height-request">150</property>
+                    <property name="width_request">690</property>
+                    <property name="height_request">150</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <placeholder/>
@@ -1065,14 +1106,14 @@
             </child>
             <child>
               <object class="GtkFixed" id="Temperature ramp2">
-                <property name="width-request">32</property>
-                <property name="height-request">32</property>
+                <property name="width_request">32</property>
+                <property name="height_request">32</property>
                 <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Thermoelectric Controller    </property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -1086,7 +1127,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Serial Port</property>
                   </object>
                   <packing>
@@ -1096,9 +1137,9 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="TESerialPort1">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <property name="editable">False</property>
@@ -1111,12 +1152,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="proportional">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">5.0</property>
                     <property name="adjustment">Proportional Bandwidth</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">1</property>
                     <property name="value">5</property>
                   </object>
@@ -1127,9 +1168,9 @@
                 </child>
                 <child>
                   <object class="GtkLabel">
-                    <property name="width-request">100</property>
+                    <property name="width_request">100</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Controller Settings</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -1143,7 +1184,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Proportional Bandwidth</property>
                   </object>
                   <packing>
@@ -1154,7 +1195,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Integral Gain</property>
                   </object>
                   <packing>
@@ -1165,7 +1206,7 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Derivative Gain</property>
                   </object>
                   <packing>
@@ -1175,14 +1216,14 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="integral">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">0.28</property>
                     <property name="adjustment">adjustment3</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">2</property>
-                    <property name="value">0.28</property>
+                    <property name="value">0.28000000000000003</property>
                   </object>
                   <packing>
                     <property name="x">250</property>
@@ -1191,12 +1232,12 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="derivative">
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can_focus">True</property>
                     <property name="text" translatable="yes">0.00</property>
                     <property name="adjustment">adjustment4</property>
-                    <property name="climb-rate">1</property>
+                    <property name="climb_rate">1</property>
                     <property name="digits">2</property>
                   </object>
                   <packing>
@@ -1207,10 +1248,35 @@
                 <child>
                   <object class="GtkButton" id="reboot">
                     <property name="label" translatable="yes">Reboot sbRIO</property>
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">470</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="Timer">
+                    <property name="width_request">400</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="max_width_chars">15</property>
+                    <property name="primary_icon_stock">gtk-about</property>
+                    <property name="secondary_icon_stock">gtk-media-record</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">430</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Current Time</property>
                   </object>
                   <packing>
                     <property name="x">30</property>
@@ -1218,13 +1284,13 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="Timer">
-                    <property name="width-request">400</property>
+                  <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="max-width-chars">15</property>
-                    <property name="primary-icon-stock">gtk-about</property>
-                    <property name="secondary-icon-stock">gtk-media-record</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">POPS</property>
+                    <attributes>
+                      <attribute name="weight" value="bold"/>
+                    </attributes>
                   </object>
                   <packing>
                     <property name="x">30</property>
@@ -1234,43 +1300,18 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Current Time</property>
-                  </object>
-                  <packing>
-                    <property name="x">30</property>
-                    <property name="y">310</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">POPS</property>
-                    <attributes>
-                      <attribute name="weight" value="bold"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="x">30</property>
-                    <property name="y">270</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Message from Instrument</property>
                   </object>
                   <packing>
                     <property name="x">30</property>
-                    <property name="y">460</property>
+                    <property name="y">540</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">POPS UDP Status</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -1283,13 +1324,13 @@
                 </child>
                 <child>
                   <object class="GtkTextView" id="UDPdata">
-                    <property name="width-request">640</property>
-                    <property name="height-request">640</property>
+                    <property name="width_request">640</property>
+                    <property name="height_request">720</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="vscroll-policy">natural</property>
+                    <property name="can_focus">True</property>
+                    <property name="vscroll_policy">natural</property>
                     <property name="editable">False</property>
-                    <property name="wrap-mode">char</property>
+                    <property name="wrap_mode">char</property>
                     <property name="buffer">UDPtextBuffer</property>
                     <property name="monospace">True</property>
                   </object>
@@ -1300,29 +1341,83 @@
                 </child>
                 <child>
                   <object class="GtkTextView" id="UDPmsg">
-                    <property name="width-request">400</property>
-                    <property name="height-request">180</property>
+                    <property name="width_request">400</property>
+                    <property name="height_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="wrap-mode">char</property>
+                    <property name="can_focus">True</property>
+                    <property name="wrap_mode">char</property>
                     <property name="buffer">UDPmsgBuffer</property>
                   </object>
                   <packing>
                     <property name="x">30</property>
-                    <property name="y">500</property>
+                    <property name="y">580</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkButton" id="newfile">
                     <property name="label" translatable="yes">Start New File</property>
-                    <property name="width-request">180</property>
+                    <property name="width_request">180</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
                   </object>
                   <packing>
                     <property name="x">250</property>
-                    <property name="y">390</property>
+                    <property name="y">470</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Heat Multiplier</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">260</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Heat Multiplier</property>
+                  </object>
+                  <packing>
+                    <property name="x">30</property>
+                    <property name="y">300</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="derivative1">
+                    <property name="width_request">180</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="text" translatable="yes">0.00</property>
+                    <property name="adjustment">adjustment2</property>
+                    <property name="climb_rate">1</property>
+                    <property name="digits">2</property>
+                    <property name="value">1</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">254</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="derivative2">
+                    <property name="width_request">180</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="text" translatable="yes">0.00</property>
+                    <property name="adjustment">adjustment5</property>
+                    <property name="climb_rate">1</property>
+                    <property name="digits">2</property>
+                    <property name="value">1</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">294</property>
                   </packing>
                 </child>
               </object>
@@ -1336,33 +1431,6 @@
           <packing>
             <property name="resize">False</property>
             <property name="shrink">False</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <child type="titlebar">
-      <object class="GtkHeaderBar" id="header">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="title" translatable="yes">Phase Detection System</property>
-        <property name="has-subtitle">False</property>
-        <child>
-          <object class="GtkStackSwitcher">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="stack">Main Stack</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="closeButton">
-            <property name="label" translatable="yes">stopDAQ</property>
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-          </object>
-          <packing>
-            <property name="pack-type">end</property>
-            <property name="position">2</property>
           </packing>
         </child>
       </object>
