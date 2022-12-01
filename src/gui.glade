@@ -1381,7 +1381,7 @@
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Heat Multiplier</property>
+                    <property name="label" translatable="yes">Cool Multiplier</property>
                   </object>
                   <packing>
                     <property name="x">30</property>
