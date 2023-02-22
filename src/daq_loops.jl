@@ -14,7 +14,7 @@ function sampleHz_data_file()
         [
             Dates.format(ts, "yyyy-mm-ddTHH:MM:SS,"),
             @sprintf(
-                "%i,%.3f,%s,%.3f,%.3f,%3.f,%.3f,%.3f,%.3f,%.3f,",
+                "%i,%.3f,%s,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,",
                 datetime2unix(ts),
                 main_elapsed_time.value,
                 state,
@@ -124,4 +124,25 @@ function sampleHz_generic_loop()
     set_gtk_property!(gui["readI"], :text, @sprintf("%.1f", readI))
     set_gtk_property!(gui["readRH"], :text, @sprintf("%.1f", RH))
     set_gtk_property!(gui["readT"], :text, @sprintf("%.1f", T))
+
+    p = POPS.decodedUDP.value
+    qstr = @sprintf("%.3f", p.q)
+    cstr = @sprintf("%.1f", p.c)
+    countstr = @sprintf("%i", sum(p.ph))
+    set_gtk_property!(gui["POPSq"], :text, qstr)
+    set_gtk_property!(gui["POPSc"], :text, cstr)
+    set_gtk_property!(gui["POPScount"], :text, countstr)
+    t = main_elapsed_time.value
+    addpoint!(t, p.c, POPSConc, gplotConc, 1, true)
+    addpoint!(t, p.q, POPSFlow, gplotFlow, 1, false)
+    graph = POPSFlow.strips[1]
+    graph.yext = InspectDR.PExtents1D() 
+    graph.yext_full = InspectDR.PExtents1D(0.0, 0.4)
+    addpoint!(t, sum(p.ph), POPSCount, gplotCount, 1, true)
+    try
+        x = range(p.config[7], stop = p.config[8], length = p.nbins) |> collect
+        addseries!(exp10.(x), p.ph, POPSHist, gplotHist, 1, true, true)
+    catch
+    end
+
 end

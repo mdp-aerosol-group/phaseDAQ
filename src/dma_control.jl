@@ -32,7 +32,7 @@ function get_DMA_config(
     return Λ
 end
 
-calibrateVoltage(v) = getVdac(v, :+, true)
+calibrateVoltage(v) = getVdac((v*0.937 - 5.577), :+, true)
 
 function getVdac(setV::Float64, polarity::Symbol, powerSwitch::Bool)
     (setV > 0.0) || (setV = 0.0)

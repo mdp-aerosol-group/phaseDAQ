@@ -14,7 +14,7 @@ function newfile()
     datestr = Dates.format(now(), "yyyymmdd")
     datetimestr = Dates.format(now(), "yyyymmdd_HHMMSS")
     thepath = mapreduce(a -> "/" * a, *, a[2:3]) * "/Data/PhasePOPS/" * datestr
-    read(`mkdir -p $path`)
+    read(`mkdir -p $thepath`)
     push!(path, thepath)
     push!(outfile, "PhasePOPS_" * datetimestr * ".csv")
     sleep(0.4)
