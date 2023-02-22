@@ -18,7 +18,6 @@ using DifferentialMobilityAnalyzers
 using LabjackU6Library
 using POPS
 
-
 const gui = GtkBuilder(filename = pwd() * "/gui.glade")
 const wnd = gui["mainWindow"]
 const serialPort = get_gtk_property(gui["TESerialPort1"], "text", String)
